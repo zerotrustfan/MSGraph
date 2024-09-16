@@ -7,6 +7,16 @@
     "postCreateCommand": "pwsh -c 'Install-Module -Name Az -AllowClobber -Scope CurrentUser -Force; Install-Module -Name Microsoft.Graph -AllowClobber -Scope CurrentUser -Force'",
     "customizations": {
         "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "PowerShell",
+                "terminal.integrated.profiles.linux": {
+                    "PowerShell": {
+                        "path": "pwsh",
+                        "icon": "terminal-powershell"
+                    }
+                },
+                "workbench.panel.defaultLocation": "right"
+            },
             "extensions": [
                 "ms-vscode.powershell",
                 "ms-azuretools.vscode-azurefunctions",
