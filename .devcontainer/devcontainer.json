@@ -1,6 +1,17 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "ghcr.io/devcontainers/features/powershell:1": {}
-  }
+    "name": "Azure and Microsoft Graph Development",
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:0-focal",
+    "features": {
+        "ghcr.io/devcontainers/features/powershell:1": {}
+    },
+    "postCreateCommand": "pwsh -c 'Install-Module -Name Az -AllowClobber -Scope CurrentUser -Force; Install-Module -Name Microsoft.Graph -AllowClobber -Scope CurrentUser -Force'",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.powershell",
+                "ms-azuretools.vscode-azurefunctions",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    }
 }
